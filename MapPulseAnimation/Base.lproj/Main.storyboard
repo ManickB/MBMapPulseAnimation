@@ -23,16 +23,12 @@
                                     <outlet property="delegate" destination="5Bv-5f-Vhz" id="doG-8c-3nZ"/>
                                 </connections>
                             </mapView>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aAP-DP-6Mk">
-                                <rect key="frame" x="7" y="554" width="361" height="768"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aAP-DP-6Mk">
+                                <rect key="frame" x="7" y="494" width="361" height="618"/>
                                 <subviews>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="67" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="q2k-I1-83t">
-                                        <rect key="frame" x="0.0" y="51" width="361" height="758"/>
+                                        <rect key="frame" x="0.0" y="51" width="361" height="618"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        <connections>
-                                            <outlet property="dataSource" destination="5Bv-5f-Vhz" id="ops-ZR-fGb"/>
-                                            <outlet property="delegate" destination="5Bv-5f-Vhz" id="6eg-HX-uuy"/>
-                                        </connections>
                                     </tableView>
                                     <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zUP-kV-Y6F">
                                         <rect key="frame" x="0.0" y="0.0" width="361" height="50"/>
@@ -66,20 +62,20 @@
                                     <constraint firstItem="q2k-I1-83t" firstAttribute="top" secondItem="zUP-kV-Y6F" secondAttribute="bottom" constant="1" id="Cxj-lJ-o35"/>
                                     <constraint firstItem="q2k-I1-83t" firstAttribute="leading" secondItem="aAP-DP-6Mk" secondAttribute="leading" id="PZR-Fo-LnO"/>
                                     <constraint firstItem="iHo-c4-uAT" firstAttribute="top" secondItem="aAP-DP-6Mk" secondAttribute="top" constant="5" id="VNa-87-8m0"/>
-                                    <constraint firstAttribute="height" constant="768" id="it9-wj-7pX"/>
-                                    <constraint firstAttribute="bottom" secondItem="q2k-I1-83t" secondAttribute="bottom" constant="-41" id="kyH-bZ-xLj"/>
+                                    <constraint firstAttribute="bottom" secondItem="q2k-I1-83t" secondAttribute="bottom" constant="-51" id="kyH-bZ-xLj"/>
                                 </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="OIg-vA-TFy" firstAttribute="centerX" secondItem="ngB-CW-GZz" secondAttribute="centerX" id="5gE-Hw-LXU"/>
+                            <constraint firstItem="aAP-DP-6Mk" firstAttribute="height" secondItem="ngB-CW-GZz" secondAttribute="height" constant="15" id="AWK-io-xVa"/>
                             <constraint firstAttribute="trailing" secondItem="aAP-DP-6Mk" secondAttribute="trailing" constant="7" id="Dcu-7G-gtA"/>
                             <constraint firstItem="OIg-vA-TFy" firstAttribute="top" secondItem="ngB-CW-GZz" secondAttribute="top" id="LwE-Fg-czj"/>
+                            <constraint firstItem="aAP-DP-6Mk" firstAttribute="top" secondItem="gi8-BN-FNS" secondAttribute="bottom" constant="494" id="NU1-Yl-HVx"/>
                             <constraint firstItem="OIg-vA-TFy" firstAttribute="leading" secondItem="ngB-CW-GZz" secondAttribute="leading" id="OpJ-yR-qOb"/>
                             <constraint firstAttribute="trailing" secondItem="OIg-vA-TFy" secondAttribute="trailing" id="cQb-5r-4td"/>
                             <constraint firstItem="aAP-DP-6Mk" firstAttribute="leading" secondItem="ngB-CW-GZz" secondAttribute="leading" constant="7" id="pcv-q7-0Re"/>
-                            <constraint firstItem="aAP-DP-6Mk" firstAttribute="top" secondItem="gi8-BN-FNS" secondAttribute="bottom" constant="534" id="v1N-Gx-jRg"/>
                             <constraint firstItem="9aQ-un-Mvp" firstAttribute="top" secondItem="OIg-vA-TFy" secondAttribute="bottom" id="yMj-5E-RJk"/>
                             <constraint firstItem="aAP-DP-6Mk" firstAttribute="centerX" secondItem="ngB-CW-GZz" secondAttribute="centerX" id="zEb-GX-Zhq"/>
                         </constraints>
@@ -110,7 +106,6 @@
                     <connections>
                         <outlet property="gestureIcon" destination="iHo-c4-uAT" id="9Zx-xb-Ix6"/>
                         <outlet property="gestureview" destination="aAP-DP-6Mk" id="VXA-6y-0Jv"/>
-                        <outlet property="locatonTable" destination="q2k-I1-83t" id="U0w-qj-28B"/>
                         <outlet property="mapview" destination="OIg-vA-TFy" id="uTs-JO-aJi"/>
                         <outlet property="outletGestureButt" destination="zUP-kV-Y6F" id="1LJ-um-GMw"/>
                     </connections>
@@ -124,6 +119,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="cPx-6x-71C" sceneMemberID="viewController">
                     <toolbarItems/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="IDh-Kl-KaW">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -136,7 +132,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mna-8r-oFT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1200" y="1088"/>
+            <point key="canvasLocation" x="1535.5" y="1088.5"/>
         </scene>
     </scenes>
     <resources>

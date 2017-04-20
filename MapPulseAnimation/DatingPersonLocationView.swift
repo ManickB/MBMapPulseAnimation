@@ -12,6 +12,12 @@ import MapKit
 
 class DatingPersonLocationView: UIViewController,MKMapViewDelegate,UIGestureRecognizerDelegate,UITableViewDelegate,UITableViewDataSource
 {
+    let PulseView = MMPulseView()
+    let MBGestureView = UIView()
+    let MBtable = UITableView()
+    let SwipeBUtt = UIButton()
+    let SwipeGestureImage = UIImageView()
+    
     @IBOutlet weak var gestureIcon: UIImageView!
     var firstX = CGFloat()
     var firstY = CGFloat()
@@ -29,7 +35,48 @@ class DatingPersonLocationView: UIViewController,MKMapViewDelegate,UIGestureReco
     
     override func viewDidLoad() {
         super.viewDidLoad()
-     
+        gestureview.hidden = true
+        
+        
+        
+        
+        
+        self.MBGestureView.frame = CGRectMake(10,(self.view.frame.size.height - self.view.frame.size.height / 3), self.view.frame.size.width  - 20, self.view.frame.size.height)
+        
+
+        
+        //UIColor.init(red: 255.0/255.0, green: 255.0/255.0, blue: 255.0/255.0, alpha: 0.6)
+        self.MBGestureView.backgroundColor =  UIColor.blackColor()
+       
+        self.SwipeBUtt.frame = CGRectMake(0, 0, self.MBGestureView.frame.size.width,50)
+        self.SwipeBUtt.backgroundColor = UIColor.init(red: 255.0/255.0, green: 102.0/255.0, blue: 102.0/255.0, alpha: 0.4)
+//
+        self.SwipeGestureImage.frame = CGRectMake((self.SwipeBUtt.frame.size.width/2 - 50/2), 0, 50,50)
+        self.SwipeGestureImage.image = UIImage.init(named: "up.png")
+        self.SwipeBUtt.addSubview(self.SwipeGestureImage)
+//
+        self.MBtable.frame = CGRectMake(0, self.SwipeBUtt.frame.size.height + 1,self.MBGestureView.frame.size.width,(self.MBGestureView.frame.size.height - self.SwipeBUtt.frame.size.height))
+        self.MBGestureView.backgroundColor = UIColor.clearColor()
+//
+        self.MBGestureView.addSubview(self.SwipeBUtt)
+        self.MBGestureView.addSubview(self.MBtable)
+        self.view.addSubview(self.MBGestureView)
+//        
+        self.MBtable.registerNib(UINib.init(nibName: "DatingPersonCell", bundle: nil), forCellReuseIdentifier: "DatingPersonCell")
+        self.MBtable.estimatedRowHeight = 72
+        
+         self.MBtable.delegate = self
+        self.MBtable.dataSource = self
+        self.pan.delegate = self
+        self.pan = UIPanGestureRecognizer(target: self, action: #selector(self.move))
+        self.pan.minimumNumberOfTouches = 1
+        self.pan.maximumNumberOfTouches = 1
+        self.MBGestureView.addGestureRecognizer(self.pan)
+        self.Tab.delegate = self
+        self.Tab = UITapGestureRecognizer(target: self, action: #selector(self.HandleTab))
+        self.SwipeBUtt.addGestureRecognizer(self.Tab)
+        self.MBtable.separatorColor = UIColor.blackColor()
+
         let  Namearr = NSArray.init(objects: "Jenna White","Marry Bighton","James","Carrie Mathison","Angelica Malroes","Abbey Root","Harry","Miya","Juily","Amelia")
         let Distancearr =  NSArray.init(objects: "400m away","300m away","500m  away","200m away","400m away","300m away","300m away","100m away","200m away","300m away")
         let Agearr =  NSArray.init(objects: "22","28","25","23","22","24","27","21","20","18")
@@ -47,14 +94,12 @@ class DatingPersonLocationView: UIViewController,MKMapViewDelegate,UIGestureReco
             dict.setObject(Agearr.objectAtIndex(i) as! String,forKey: "age")
             dict.setObject(Latarray.objectAtIndex(i) as! String,forKey: "lat")
             dict.setObject(Lonarray.objectAtIndex(i) as! String,forKey: "lon")
+            dict.setObject("",forKey: "selecting")
             TableArr.addObject(dict)
         }
         PersonArr = TableArr.objectAtIndex(0) as! NSDictionary
         
-        
-        
-        
-        self.locatonTable.registerNib(UINib.init(nibName: "DatingPersonCell", bundle: nil), forCellReuseIdentifier: "DatingPersonCell")
+      
 
         
     let coordinate:CLLocationCoordinate2D = CLLocationCoordinate2D(latitude: PersonArr.valueForKey("lat")!.doubleValue, longitude: PersonArr.valueForKey("lon")!.doubleValue)
@@ -64,17 +109,10 @@ class DatingPersonLocationView: UIViewController,MKMapViewDelegate,UIGestureReco
         annotation.coordinate = coordinate
         self.mapview.addAnnotation(annotation)
         PersonimageName = PersonArr.valueForKey("imagename") as! String
-        self.pan.delegate = self
-        self.pan = UIPanGestureRecognizer(target: self, action: #selector(self.move))
-        self.pan.minimumNumberOfTouches = 1
-        self.pan.maximumNumberOfTouches = 1
-        self.gestureview.addGestureRecognizer(self.pan)
-        self.Tab.delegate = self
-        self.Tab = UITapGestureRecognizer(target: self, action: #selector(self.HandleTab))
-        self.outletGestureButt.addGestureRecognizer(self.Tab)
-        self.locatonTable.separatorColor = UIColor.blackColor()
 
+   self.MBtable.reloadData()
    }
+   
     func mapView(mV: MKMapView, viewForAnnotation annotation: MKAnnotation) -> MKAnnotationView?
     {
         var pinView : MKAnnotationView? = nil
@@ -89,7 +127,8 @@ class DatingPersonLocationView: UIViewController,MKMapViewDelegate,UIGestureReco
         pulsev.layer.cornerRadius = pulsev.frame.size.height / 2
         pulsev.layer.masksToBounds = true
         pulsev.backgroundColor = UIColor.clearColor()
-        let PulseView = MMPulseView()
+      
+        
         PulseView.frame = CGRectMake((pulsev.frame.size.width - 130)/2,(pulsev.frame.size.height - 130)/2,130,130);
         let annotationImage = UIView.init(frame: CGRectMake(((pulsev.frame.size.width) - 50)/2,((pulsev.frame.size.height) - 50)/2, 50, 50))
         annotationImage.backgroundColor = UIColor.init(patternImage: UIImage.init(named:"redpin.png")!)
@@ -124,8 +163,8 @@ class DatingPersonLocationView: UIViewController,MKMapViewDelegate,UIGestureReco
     }
     func HandleTab(sender: UITapGestureRecognizer) {
         let location = sender.locationInView(self.view.superview!)
-        print("\(location.x)")
-        print("\(location.y)")
+//        print("\(location.x)")
+//        print("\(location.y)")
         self.actofGesture(self)
     }
     func move(sender: AnyObject) {
@@ -141,17 +180,28 @@ class DatingPersonLocationView: UIViewController,MKMapViewDelegate,UIGestureReco
             let velocityX: CGFloat = (0.2 * (sender as! UIPanGestureRecognizer).velocityInView(self.view).x)
             let finalX: CGFloat = firstX
             var finalY: CGFloat = translatedPoint.y + (0.35 * (sender as! UIPanGestureRecognizer).velocityInView(self.view).y)
-            print("\(translatedPoint.y)")
-            if translatedPoint.y < 888 {
-                finalY = 504
+            print("x:\(translatedPoint.x)")
+            print("y:\(translatedPoint.y)")
+            
+            let  UPHeight = (self.view.frame.size.height - self.view.frame.size.height / 3) + 300
+            let  DownHeight = (self.view.frame.size.height - self.view.frame.size.height / 3) - 20
+            
+            print("UPHeight:\(UPHeight)")
+            print("DownHeight:\(DownHeight)")
+            
+            //888
+            //504
+            
+            if translatedPoint.y < UPHeight {
+                finalY = DownHeight
                 gestureIcon.image = UIImage.init(named: "down")
             }
-            else if translatedPoint.y > 504 {
-                finalY = 888;
+            else if translatedPoint.y > DownHeight {
+                finalY = UPHeight;
                 gestureIcon.image = UIImage.init(named: "up")
             }
             let animationDuration: CGFloat = (abs(velocityX) * 0.0002) + 0.2
-            print("\(finalX) , \(finalY)")
+            print("finalX = \(finalX) , finalY = \(finalY)")
             UIView.beginAnimations(nil, context: nil)
             UIView.setAnimationDuration(NSTimeInterval(animationDuration))
             UIView.setAnimationCurve(.EaseOut)
@@ -161,36 +211,44 @@ class DatingPersonLocationView: UIViewController,MKMapViewDelegate,UIGestureReco
             UIView.commitAnimations()
         }
     }
-    
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return UITableViewAutomaticDimension
+    }
    
 
     @IBAction func actofGesture(sender: AnyObject)
     {
         var finalY: CGFloat
-        let finalX: CGFloat = self.gestureview.center.x
-        print("\(self.gestureview.center.y)")
-        if self.gestureview
-            .center.y >= 888 {
-            finalY = 504
-            gestureIcon.image = UIImage.init(named: "down.png")
+        let finalX: CGFloat = self.MBGestureView.center.x
+        print("\(self.MBGestureView.center.y)")
+        let  UPHeight = (self.view.frame.size.height - self.view.frame.size.height / 3) + 300
+        let  DownHeight = (self.view.frame.size.height - self.view.frame.size.height / 3) - 20
+
+        if self.MBGestureView
+            .center.y >= UPHeight {
+            finalY = DownHeight
+            SwipeGestureImage.image = UIImage.init(named: "down.png")
         }
         else {
-            finalY = 888
-            gestureIcon.image = UIImage.init(named: "up.png")
+            finalY = UPHeight
+            SwipeGestureImage.image = UIImage.init(named: "up.png")
         }
         UIView.beginAnimations(nil, context: nil)
         UIView.setAnimationDuration(NSTimeInterval( 0.4))
         UIView.setAnimationCurve(.EaseOut)
         UIView.setAnimationDelegate(self)
         //        UIView.setAnimationDidStopSelector( #selector(self.animationDidFinish))
-        self.gestureview.center = CGPointMake(finalX, finalY)
+        self.MBGestureView.center = CGPointMake(finalX, finalY)
         UIView.commitAnimations()
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+
         return TableArr.count;
+      
     }
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+
         let cell = tableView.dequeueReusableCellWithIdentifier("DatingPersonCell") as! DatingPersonCell
         cell.Profileimage.setImageWithURL(NSURL(string:"")!, placeholderImage: UIImage(named:TableArr[indexPath.row].valueForKey("imagename")as! String))
 
@@ -198,8 +256,11 @@ class DatingPersonLocationView: UIViewController,MKMapViewDelegate,UIGestureReco
         cell.distanceLbl.text = TableArr[indexPath.row].valueForKey("distance")as? String
         return cell
     }
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-    let coordinate:CLLocationCoordinate2D = CLLocationCoordinate2D(latitude: TableArr[indexPath.row].valueForKey("lat")!.doubleValue, longitude: TableArr[indexPath.row].valueForKey("lon")!.doubleValue)
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath)
+    {
+        let allAnnotations = self.mapview.annotations
+        self.mapview.removeAnnotations(allAnnotations)
+        let coordinate:CLLocationCoordinate2D = CLLocationCoordinate2D(latitude: TableArr[indexPath.row].valueForKey("lat")!.doubleValue, longitude: TableArr[indexPath.row].valueForKey("lon")!.doubleValue)
         let annotation = MKPointAnnotation()
         annotation.title = TableArr[indexPath.row].valueForKey("name") as? String
         annotation.subtitle = TableArr[indexPath.row].valueForKey("distance") as? String
@@ -207,8 +268,8 @@ class DatingPersonLocationView: UIViewController,MKMapViewDelegate,UIGestureReco
         self.mapview.addAnnotation(annotation)
         PersonimageName = TableArr[indexPath.row].valueForKey("imagename") as! String
         self.actofGesture(self)
-    }
-    
-  
+ 
+}
+
 }
 
