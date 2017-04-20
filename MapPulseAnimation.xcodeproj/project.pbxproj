@@ -7,21 +7,33 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0A76BCEA802ABEAEFB4734D4 /* Pods_MapPulseAnimation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 692C6CDEF213E9C566277031 /* Pods_MapPulseAnimation.framework */; };
+		7458AC711EA87E060077F63D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7458AC701EA87E060077F63D /* Assets.xcassets */; };
 		74963DF71EA87B0300F8EA63 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74963DF61EA87B0300F8EA63 /* AppDelegate.swift */; };
-		74963DF91EA87B0300F8EA63 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74963DF81EA87B0300F8EA63 /* ViewController.swift */; };
 		74963DFC1EA87B0300F8EA63 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 74963DFA1EA87B0300F8EA63 /* Main.storyboard */; };
-		74963DFE1EA87B0300F8EA63 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 74963DFD1EA87B0300F8EA63 /* Assets.xcassets */; };
 		74963E011EA87B0300F8EA63 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 74963DFF1EA87B0300F8EA63 /* LaunchScreen.storyboard */; };
+		74963E0E1EA87B5B00F8EA63 /* DatingPersonLocationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74963E091EA87B5B00F8EA63 /* DatingPersonLocationView.swift */; };
+		74963E0F1EA87B5B00F8EA63 /* DatingPersonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74963E0A1EA87B5B00F8EA63 /* DatingPersonCell.swift */; };
+		74963E101EA87B5B00F8EA63 /* DatingPersonCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 74963E0B1EA87B5B00F8EA63 /* DatingPersonCell.xib */; };
+		74963E111EA87B5B00F8EA63 /* MMPulseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 74963E0D1EA87B5B00F8EA63 /* MMPulseView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		692C6CDEF213E9C566277031 /* Pods_MapPulseAnimation.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MapPulseAnimation.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7458AC701EA87E060077F63D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		74963DF31EA87B0200F8EA63 /* MapPulseAnimation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MapPulseAnimation.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		74963DF61EA87B0300F8EA63 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		74963DF81EA87B0300F8EA63 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		74963DFB1EA87B0300F8EA63 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		74963DFD1EA87B0300F8EA63 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		74963E001EA87B0300F8EA63 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		74963E021EA87B0300F8EA63 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		74963E081EA87B5A00F8EA63 /* MapPulseAnimation-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MapPulseAnimation-Bridging-Header.h"; sourceTree = "<group>"; };
+		74963E091EA87B5B00F8EA63 /* DatingPersonLocationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatingPersonLocationView.swift; sourceTree = "<group>"; };
+		74963E0A1EA87B5B00F8EA63 /* DatingPersonCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatingPersonCell.swift; sourceTree = "<group>"; };
+		74963E0B1EA87B5B00F8EA63 /* DatingPersonCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DatingPersonCell.xib; sourceTree = "<group>"; };
+		74963E0C1EA87B5B00F8EA63 /* MMPulseView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMPulseView.h; sourceTree = "<group>"; };
+		74963E0D1EA87B5B00F8EA63 /* MMPulseView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMPulseView.m; sourceTree = "<group>"; };
+		893103DC6CBC8EA29A55C840 /* Pods-MapPulseAnimation.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MapPulseAnimation.release.xcconfig"; path = "Pods/Target Support Files/Pods-MapPulseAnimation/Pods-MapPulseAnimation.release.xcconfig"; sourceTree = "<group>"; };
+		FBEF1F15B2C8256301571805 /* Pods-MapPulseAnimation.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MapPulseAnimation.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MapPulseAnimation/Pods-MapPulseAnimation.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +41,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0A76BCEA802ABEAEFB4734D4 /* Pods_MapPulseAnimation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		59284F99DC52557765D1074B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				FBEF1F15B2C8256301571805 /* Pods-MapPulseAnimation.debug.xcconfig */,
+				893103DC6CBC8EA29A55C840 /* Pods-MapPulseAnimation.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		74963DEA1EA87B0200F8EA63 = {
 			isa = PBXGroup;
 			children = (
 				74963DF51EA87B0300F8EA63 /* MapPulseAnimation */,
 				74963DF41EA87B0300F8EA63 /* Products */,
+				59284F99DC52557765D1074B /* Pods */,
+				DE09BD591A47353BC38B2725 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -55,13 +79,26 @@
 			isa = PBXGroup;
 			children = (
 				74963DF61EA87B0300F8EA63 /* AppDelegate.swift */,
-				74963DF81EA87B0300F8EA63 /* ViewController.swift */,
 				74963DFA1EA87B0300F8EA63 /* Main.storyboard */,
-				74963DFD1EA87B0300F8EA63 /* Assets.xcassets */,
+				74963E091EA87B5B00F8EA63 /* DatingPersonLocationView.swift */,
+				74963E0A1EA87B5B00F8EA63 /* DatingPersonCell.swift */,
+				74963E0B1EA87B5B00F8EA63 /* DatingPersonCell.xib */,
+				74963E0C1EA87B5B00F8EA63 /* MMPulseView.h */,
+				74963E0D1EA87B5B00F8EA63 /* MMPulseView.m */,
+				7458AC701EA87E060077F63D /* Assets.xcassets */,
 				74963DFF1EA87B0300F8EA63 /* LaunchScreen.storyboard */,
 				74963E021EA87B0300F8EA63 /* Info.plist */,
+				74963E081EA87B5A00F8EA63 /* MapPulseAnimation-Bridging-Header.h */,
 			);
 			path = MapPulseAnimation;
+			sourceTree = "<group>";
+		};
+		DE09BD591A47353BC38B2725 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				692C6CDEF213E9C566277031 /* Pods_MapPulseAnimation.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,9 +108,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 74963E051EA87B0300F8EA63 /* Build configuration list for PBXNativeTarget "MapPulseAnimation" */;
 			buildPhases = (
+				5C0BDCA75A36A3AF28AC2E3B /* [CP] Check Pods Manifest.lock */,
 				74963DEF1EA87B0200F8EA63 /* Sources */,
 				74963DF01EA87B0200F8EA63 /* Frameworks */,
 				74963DF11EA87B0200F8EA63 /* Resources */,
+				92C1AE4C9248BAF95A1C7F0F /* [CP] Embed Pods Frameworks */,
+				6341CE4C2053657895DC23E0 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -123,20 +163,71 @@
 			buildActionMask = 2147483647;
 			files = (
 				74963E011EA87B0300F8EA63 /* LaunchScreen.storyboard in Resources */,
-				74963DFE1EA87B0300F8EA63 /* Assets.xcassets in Resources */,
 				74963DFC1EA87B0300F8EA63 /* Main.storyboard in Resources */,
+				7458AC711EA87E060077F63D /* Assets.xcassets in Resources */,
+				74963E101EA87B5B00F8EA63 /* DatingPersonCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		5C0BDCA75A36A3AF28AC2E3B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		6341CE4C2053657895DC23E0 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MapPulseAnimation/Pods-MapPulseAnimation-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		92C1AE4C9248BAF95A1C7F0F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MapPulseAnimation/Pods-MapPulseAnimation-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		74963DEF1EA87B0200F8EA63 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				74963DF91EA87B0300F8EA63 /* ViewController.swift in Sources */,
+				74963E0E1EA87B5B00F8EA63 /* DatingPersonLocationView.swift in Sources */,
 				74963DF71EA87B0300F8EA63 /* AppDelegate.swift in Sources */,
+				74963E111EA87B5B00F8EA63 /* MMPulseView.m in Sources */,
+				74963E0F1EA87B5B00F8EA63 /* DatingPersonCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -247,23 +338,30 @@
 		};
 		74963E061EA87B0300F8EA63 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FBEF1F15B2C8256301571805 /* Pods-MapPulseAnimation.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = MapPulseAnimation/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.vivid.MapPulseAnimation;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "MapPulseAnimation/MapPulseAnimation-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
 		74963E071EA87B0300F8EA63 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 893103DC6CBC8EA29A55C840 /* Pods-MapPulseAnimation.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = MapPulseAnimation/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.vivid.MapPulseAnimation;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "MapPulseAnimation/MapPulseAnimation-Bridging-Header.h";
 			};
 			name = Release;
 		};
@@ -286,6 +384,7 @@
 				74963E071EA87B0300F8EA63 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

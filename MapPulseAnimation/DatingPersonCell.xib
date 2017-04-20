@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="DatingPersonCell" rowHeight="72" id="KGk-i7-Jjw" customClass="DatingPersonCell" customModule="MapPulseAnimation" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="72"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="71"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PYF-7u-kdl">
+                        <rect key="frame" x="66" y="40" width="246" height="21"/>
+                        <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="15"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="WKe-Xq-fcq">
+                        <rect key="frame" x="8" y="11" width="50" height="50"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="50" id="GSX-wv-Go5"/>
+                            <constraint firstAttribute="height" constant="50" id="gnd-Q7-heJ"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GQX-87-Xgr">
+                        <rect key="frame" x="66" y="11" width="246" height="21"/>
+                        <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="18"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                <constraints>
+                    <constraint firstItem="GQX-87-Xgr" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="11" id="Gkh-U7-bIB"/>
+                    <constraint firstItem="GQX-87-Xgr" firstAttribute="leading" secondItem="WKe-Xq-fcq" secondAttribute="trailing" constant="8" id="LZ2-GM-HbQ"/>
+                    <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="PYF-7u-kdl" secondAttribute="bottom" constant="10" id="RMr-GM-AON"/>
+                    <constraint firstAttribute="trailing" secondItem="GQX-87-Xgr" secondAttribute="trailing" constant="8" id="RQ8-1E-XFp"/>
+                    <constraint firstAttribute="trailing" secondItem="PYF-7u-kdl" secondAttribute="trailing" constant="8" id="Utf-EM-ExX"/>
+                    <constraint firstItem="WKe-Xq-fcq" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="11" id="VkU-tX-VMJ"/>
+                    <constraint firstItem="WKe-Xq-fcq" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="8" id="eEJ-rB-D0c"/>
+                    <constraint firstItem="PYF-7u-kdl" firstAttribute="top" secondItem="GQX-87-Xgr" secondAttribute="bottom" constant="8" id="sLj-B7-heC"/>
+                    <constraint firstItem="PYF-7u-kdl" firstAttribute="leading" secondItem="WKe-Xq-fcq" secondAttribute="trailing" constant="8" id="uqo-CB-TY5"/>
+                </constraints>
+            </tableViewCellContentView>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <connections>
+                <outlet property="Profileimage" destination="WKe-Xq-fcq" id="9UR-5i-8Qs"/>
+                <outlet property="distanceLbl" destination="PYF-7u-kdl" id="f6B-6O-k5P"/>
+                <outlet property="name" destination="GQX-87-Xgr" id="ncc-bx-54Y"/>
+            </connections>
+            <point key="canvasLocation" x="416" y="314"/>
+        </tableViewCell>
+    </objects>
+</document>
