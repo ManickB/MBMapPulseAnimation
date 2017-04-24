@@ -16,6 +16,7 @@
 		74963E0F1EA87B5B00F8EA63 /* DatingPersonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74963E0A1EA87B5B00F8EA63 /* DatingPersonCell.swift */; };
 		74963E101EA87B5B00F8EA63 /* DatingPersonCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 74963E0B1EA87B5B00F8EA63 /* DatingPersonCell.xib */; };
 		74963E111EA87B5B00F8EA63 /* MMPulseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 74963E0D1EA87B5B00F8EA63 /* MMPulseView.m */; };
+		74EC1DBF1EAA33070043093A /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 74EC1DBE1EAA33070043093A /* MapKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		74963E0B1EA87B5B00F8EA63 /* DatingPersonCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DatingPersonCell.xib; sourceTree = "<group>"; };
 		74963E0C1EA87B5B00F8EA63 /* MMPulseView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMPulseView.h; sourceTree = "<group>"; };
 		74963E0D1EA87B5B00F8EA63 /* MMPulseView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMPulseView.m; sourceTree = "<group>"; };
+		74EC1DBE1EAA33070043093A /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		893103DC6CBC8EA29A55C840 /* Pods-MapPulseAnimation.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MapPulseAnimation.release.xcconfig"; path = "Pods/Target Support Files/Pods-MapPulseAnimation/Pods-MapPulseAnimation.release.xcconfig"; sourceTree = "<group>"; };
 		FBEF1F15B2C8256301571805 /* Pods-MapPulseAnimation.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MapPulseAnimation.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MapPulseAnimation/Pods-MapPulseAnimation.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -41,6 +43,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				74EC1DBF1EAA33070043093A /* MapKit.framework in Frameworks */,
 				0A76BCEA802ABEAEFB4734D4 /* Pods_MapPulseAnimation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -96,6 +99,7 @@
 		DE09BD591A47353BC38B2725 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				74EC1DBE1EAA33070043093A /* MapKit.framework */,
 				692C6CDEF213E9C566277031 /* Pods_MapPulseAnimation.framework */,
 			);
 			name = Frameworks;
@@ -136,6 +140,7 @@
 				TargetAttributes = {
 					74963DF21EA87B0200F8EA63 = {
 						CreatedOnToolsVersion = 7.3.1;
+						LastSwiftMigration = 0820;
 					};
 				};
 			};
@@ -348,6 +353,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "MapPulseAnimation/MapPulseAnimation-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -362,6 +368,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.vivid.MapPulseAnimation;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "MapPulseAnimation/MapPulseAnimation-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
